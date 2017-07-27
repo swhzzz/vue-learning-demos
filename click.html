@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app8">
+        <button @click='count++'>click</button>
+        <p>这个按钮被点击了{{count}}次</p>
+    </div>
+    <script>
+        var app8 = new Vue({
+            el: '...',
+            data: {
+                count: 0
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

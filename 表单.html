@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="checkbox" id="swim" value="swimmm" v-model="checkedNames">
+        <label for="swim">swimmmm</label>
+        <input type="checkbox" id="run" value="runnn" v-model="checkedNames">
+        <label for="run">runnnn</label>
+        <input type="checkbox" id="baseball" value="baseballll" v-model="checkedNames">
+        <label for="baseball">baseballllll</label>
+        <p>checked names: {{checkedNames}} </p>
+    </div>
+    <div id="app2">
+        <input type="radio" value="男" id="male" name="general" v-model="aa">
+        <label for="male">男</label>
+        <input type="radio" value="女" id="female" name="general" v-model="aa">
+        <label for="female">女</label>
+        <p>你选择的性别是：{{aa}}</p>
+    </div>
+    <div id="app3">
+        <select v-model='car'>
+            <option value="benzi">benzi</option>
+            <option value="audi">audi</option>
+            <option value="bmw">bmw</option>
+        </select>
+        <p>you picked: {{car}}</p>
+    </div>
+    <div id="app4">
+        <select v-model="selected">
+            <option v-for="option in options" :value="option.value">
+                {{option.text}}
+            </option>
+        </select>
+        <p>you picked: {{selected}}</p>
+    </div>
+    <div id="app5">
+        <input type="radio" id="test" bind:value="a" v-model="pick">
+        <label for="test">{{pick}}</label>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                checkedNames: []
+            }
+        })
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                aa: ''
+            }
+        })
+        var app3 = new Vue({
+            el: '#app3',
+            data: {
+                car: 'benzi'
+            }
+        })
+        var app4 = new Vue({
+            el: '#app4',
+            data: {
+                selected: '奔驰',
+                options: [{
+                    text: 'benzi',
+                    value: '奔驰'
+                }, {
+                    text: 'bmw',
+                    value: '宝马'
+                }, {
+                    text: 'audi',
+                    value: '奥迪'
+                }]
+            }
+        })
+        var app5 = new Vue({
+            el: '#app5',
+            data: {
+                pick: '',
+                a: 123
+            }
+        })
+    </script>
+</body>
+
+</html>

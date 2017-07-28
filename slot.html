@@ -11,22 +11,21 @@
 
 <body>
     <div id="app">
-        <input v-model="msg">
-        <p>{{msg2}}</p>
+        <my-component>
+            <slot>This should not show.</slot>
+        </my-component>
     </div>
     <script>
+        var child = {
+            template: '<p>This is a child component.</p>'
+        }
         var vm = new Vue({
             el: '#app',
-            data: {
-                msg: "hello"
-            },
-            computed: {
-                msg2: function() {
-                    return this.msg + '1'
-                }
+            components: {
+                'my-component': child
             }
+
         })
-        console.log(vm.$data)
     </script>
 </body>
 

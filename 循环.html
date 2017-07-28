@@ -15,8 +15,9 @@
             {{todo.content}}
         </li>
     </ol>
+    <p>methods中的函数不能用箭头函数，因为箭头函数的this绑定父级作用域的上下文，this将指向undefined而不是vue实例</p>
     <script>
-        var app4 = new Vue({
+        var vm = new Vue({
             el: '#app4',
             data: {
                 todos: [{
@@ -25,17 +26,9 @@
                     content: 'is'
                 }, {
                     content: 'content'
-                }, {
-                    content: 'try "add()"'
                 }]
             }
         })
-
-        function add() {
-            app4.todos.push({
-                content: 'new content'
-            })
-        }
     </script>
 </body>
 

@@ -14,6 +14,7 @@
         <p>{{total}}</p>
         <button-counter v-on:increment="incrementTotal"></button-counter>
         <button-counter v-on:increment="incrementTotal"></button-counter>
+        <p>小结：子组件传递给父组件时，需要通过手动触发事件完成，一般用v-on绑定事件，用$emit(event)来触发事件</p>
     </div>
     <script>
         Vue.component('button-counter', {
@@ -25,8 +26,8 @@
             },
             methods: {
                 xxx: function() {
-                    this.counter++
-                        this.$emit('increment')
+                    this.counter++;
+                    this.$emit('increment');
                 }
             }
         })

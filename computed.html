@@ -11,17 +11,19 @@
 
 <body>
     <div id="app">
-        <p>nihao{{message}}</p>
-        <p>nihao{{reversemessage}}</p>
+        <input v-model="msg">
+        <p>{{msg2}}</p>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: "hello"
+                msg: "hello"
             },
             computed: {
-                reversemessage: 'aa'
+                msg2: function() {
+                    return this.msg + '1'
+                }
             }
 
         })
